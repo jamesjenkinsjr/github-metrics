@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-class UserItem extends Component {
-    render(){
-        const {user, selectedUser, onSelect, removeUser } = this.props;
+import React from 'react';
+const UserItem = props => {
+        const {user, selectedUser, onSelect, removeUser } = props;
         const classes = selectedUser === user ? 
                             'UserSideBar--list-item active' : 
                             'UserSideBar--list-item';
@@ -13,5 +12,4 @@ class UserItem extends Component {
                 </li>
                  );
     }
-}
 export default UserItem
