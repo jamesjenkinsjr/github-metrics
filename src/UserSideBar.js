@@ -14,7 +14,7 @@ const UserSideBar = props => {
                     onSelect={onSelect}
                     removeUser={removeUser}/>
                 <div className="UserSideBar--user-form">
-                    <form onSubmit={(e) => props.addUser(e, this.props.username)}>
+                    <form onSubmit={(e) => props.addUser(e, props.username)}>
                         <input type="text" 
                             value={props.username} 
                             placeholder='GitHub Username'
