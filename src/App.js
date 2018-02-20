@@ -15,7 +15,8 @@ class App extends Component {
       users: ['justin1dennison', 'jd'],
       selectedUser: '',
       userInfo: null, 
-      userToAdd: ''
+      userToAdd: '',
+      userToRemove: ''
     }
     this.selectUser = this.selectUser.bind(this);
     this.updateUser = this.updateUser.bind(this);
@@ -42,7 +43,22 @@ class App extends Component {
   }
   removeUser(username){
     const { users } = this.state;
-    //finish the remove user portion
+    const index = users.indexOf(username);
+    const first = users.slice(0, index);
+    const last = users.slice(index + 1);
+
+    const newUserState = [
+      ...first,
+      ...last
+    ]
+    this.setState({
+      users: newUserState,
+      userToremove: ''
+    });
+    console.log(users);
+    
+    
+
   }
   selectUser(user){
     getUserInformation(user)
