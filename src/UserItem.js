@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 const UserItem = props => {
         const {user, selectedUser, onSelect, removeUser } = props;
         const classes = selectedUser === user ? 
@@ -12,4 +13,11 @@ const UserItem = props => {
                 </li>
                  );
     }
+
+UserItem.propTypes = {
+    user: PropTypes.string.isRequired,
+    selectedUser: PropTypes.string.isRequired,
+    onSelect: PropTypes.func.isRequired,
+    removeUser: PropTypes.func.isRequired
+}
 export default UserItem
