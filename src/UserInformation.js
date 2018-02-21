@@ -1,5 +1,6 @@
 import React from "react";
 import "./UserInformation.css";
+import PropTypes from 'prop-types';
 
 const UserInformation = props => {
   const { info } = props;
@@ -30,5 +31,9 @@ const UserInformation = props => {
     </div>
   );
 };
+
+UserInformation.propTypes = {
+  info: PropTypes.object.isRequired
+}
 
 export default UserInformation;
