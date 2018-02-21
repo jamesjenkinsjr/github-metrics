@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import UserList from './UserList.js';
 import './UserSideBar.css';
 
@@ -25,4 +26,13 @@ const UserSideBar = props => {
         );
     }
 
+UserSideBar.propTypes = {
+    users: PropTypes.arrayOf(PropTypes.string).isRequired,
+    selectedUser: PropTypes.string.isRequired,
+    onSelect: PropTypes.func.isRequired,
+    removeUser: PropTypes.func.isRequired,
+    addUser: PropTypes.func.isRequired,
+    username: PropTypes.string.isRequired,
+    updateUser: PropTypes.func.isRequired
+}
 export default UserSideBar;
